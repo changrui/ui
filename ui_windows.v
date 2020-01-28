@@ -5,8 +5,9 @@ module ui
 
 fn C.MessageBox(h voidptr, text charptr, caption charptr, kind u32) int
 
-pub fn message_box(s string) {
+// Add message box `title`.
+pub fn message_box(tile, msg string) {
 	title := ''
-	C.MessageBox(0, s.str, title.str, C.MB_OK)
+	C.MessageBox(0, msg.str, title.str, C.MB_OK)
 }
 
